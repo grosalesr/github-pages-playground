@@ -65,17 +65,17 @@ Elasticsearch is a distributed document store and search engine. Instead of stor
     * Indices are identified by lowercase names that refer to actions that are performed actions (such as searching and deleting) on the documents that are inside each index.
     * Each index is made up of one or more shards.
 
-* **Shards** are a Lucene\[1\] index that stores and processes some or all data for an index.
+* **Shards** are a Lucene[^1] index that stores and processes some or all data for an index.
     * They are the building blocks of Elasticsearch and what facilitate its scalability.
         * Elasticsearch automatically creates and manages these Lucene instances
 
-    * Can be distributed across multiple nodes in a cluster to achieve data redundancy and load sharing goals.\[2\]
+    * Can be distributed across multiple nodes in a cluster to achieve data redundancy and load sharing goals.[^2]
     * There are two types of shards:
         * **Primary**: Lucene instance containing some or all data for an index. When you index a document, Elasticsearch adds the document to primary shards before replica shards.
         * **Replica**: Copy of a primary shard. **Replica shards can improve search performance and resiliency by distributing data across multiple nodes**.
             * A replica shard is never allocated on the same node where the related primary is.
 
-* **Segment** is a Lucene segment, shards are composed of Lucene segments, that immutably stores a portion of a Lucene index.\[3\]
+* **Segment** is a Lucene segment, shards are composed of Lucene segments, that immutably stores a portion of a Lucene index.[^3]
 
 ## More about Sharding & Replicas
 
@@ -92,7 +92,7 @@ For cluster with more than one node, sharding enables:
   * Increases performance in cases where shards are distributed on multiple nodes, because search queries can then be parallelized, which better utilizes the hardware resources that your nodes have available to them.
 
 Best Practices:
-  * Do not exceed 20 shards per GB of JVM Heap\[4\]
+  * Do not exceed 20 shards per GB of JVM Heap[^4]
   * Do not exceed (up to) 50 GB per shard (index life cycle management)
 
 ### Replicas
@@ -177,7 +177,7 @@ The following recommendation are given by Elastic specifically for a three node 
 
 # Resources
 ## Webinars
-* [Sizing and capacity planing](https://www.elastic.co/webinars/elasticsearch-sizing-and-capacity-*planning)
+* [Sizing and capacity planing](https://www.elastic.co/webinars/elasticsearch-sizing-and-capacity-planning)
 * [Quantitative cluster sizing](https://www.elastic.co/elasticon/conf/2016/sf/quantitative-cluster-sizing)
 
 ## Documentation
@@ -193,7 +193,7 @@ The following recommendation are given by Elastic specifically for a three node 
 
 ---
 
-1.  Apache Lucene is a Java open-source library that performs full-text search
-2.  See ‘More about Sharding & Replicas’ for details
-3.  Generally speaking, it is low level we should not care about since it is managed automatically by Elasticsearch.
-4.  Heap memory is the run time data area from which the memory for all java class instances and arrays is allocated
+^1:  Apache Lucene is a Java open-source library that performs full-text search
+^2:  See ‘More about Sharding & Replicas’ for details
+^3:  Generally speaking, it is low level we should not care about since it is managed automatically by Elasticsearch.
+^4:  Heap memory is the run time data area from which the memory for all java class instances and arrays is allocated
