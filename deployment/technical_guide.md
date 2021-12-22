@@ -193,7 +193,7 @@ The following recommendation are given by Elastic specifically for a three node 
 
 ---
 
-^1:  Apache Lucene is a Java open-source library that performs full-text search
-^2:  See ‘More about Sharding & Replicas’ for details
-^3:  Generally speaking, it is low level we should not care about since it is managed automatically by Elasticsearch.
-^4:  Heap memory is the run time data area from which the memory for all java class instances and arrays is allocated
+[^1]:  Apache Lucene is a Java open-source library that performs full-text search
+[^2]:  See ‘More about Sharding & Replicas’ for details
+[^3]:  Generally speaking, it is low level we should not care about since it is managed automatically by Elasticsearch.
+[^4]:  Heap memory is the run time data area from which the memory for all java class instances and arrays is allocated
