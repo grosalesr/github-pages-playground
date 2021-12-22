@@ -37,7 +37,7 @@
 Elasticsearch is a distributed document store and search engine. Instead of storing information as rows of columnar data, Elasticsearch stores complex data structures that have been serialized as JSON documents. When you have multiple Elasticsearch nodes in a cluster, stored documents are distributed across the cluster and can be accessed immediately from any node.
 
 ## Concepts
-* **Fields** are the smallest individual unit of data, key*value pair, in a Elasticsearch document.
+* **Fields** are the smallest individual unit of data, key-value pair, in a Elasticsearch document.
     * **In the world of relational databases, a field can be compared to a column in table**.
     * Have a defined datatype and contains a single piece of data.
         * **core datatypes**: strings, numbers, dates, Booleans.
@@ -96,9 +96,9 @@ Best Practices:
   * Do not exceed (up to) 50 GB per shard (index life cycle management)
 
 ### Replicas
-Replicas are Elasticsearch fail*safe mechanisms, they provide redundant copies of the data and increase capacity to serve read requests like searching or retrieving a document.
+Replicas are Elasticsearch fail-safe mechanisms, they provide redundant copies of the data and increase capacity to serve read requests like searching or retrieving a document.
 
-A single node cluster is not resilient. If the node fails, the cluster will stop working. Because there are no replicas in a one*node cluster, the data cannot be stored redundantly.
+A single node cluster is not resilient. If the node fails, the cluster will stop working. Because there are no replicas in a one-node cluster, the data cannot be stored redundantly.
 
 For a cluster with more than one node, the following is true for replicas:
   * Replicas are not placed on the same node as the original shards from which they were replicated
@@ -115,7 +115,7 @@ For a cluster with more than one node, the following is true for replicas:
   * The number of replicas can be reduced in order to have more disk space available to store data, however that is in exchange of data redundancy.
 
 ## Data replication and balancing
-Elasticsearch knows how to balance multi*node clusters to provide scale and high availability by:
+Elasticsearch knows how to balance multi-node clusters to provide scale and high availability by:
 
 1.  Distributing the documents in an index across multiple shards and
 1.  Distributing shards (primary and replicas) across multiple nodes
@@ -165,7 +165,7 @@ The following recommendation are given by Elastic specifically for a three node 
 * All they are data nodes
     * **Default behavior**
 
-* Each node must be configured to be ‘master* eligible’
+* Each node must be configured to be ‘master eligible’
     * Any two of them can hold a master election without needing to communicate with the third node (Split Brain)
     * **Default behavior**
 
@@ -177,12 +177,12 @@ The following recommendation are given by Elastic specifically for a three node 
 
 # Resources
 ## Webinars
-* [Sizing and capacity planing](https://www.elastic.co/webinars/elasticsearch*-sizing*-and*-capacity-*planning)
-* [Quantitative cluster sizing](https://www.elastic.co/elasticon/conf/2016/sf/quantitative*-cluster*-sizing)
+* [Sizing and capacity planing](https://www.elastic.co/webinars/elasticsearch-sizing-and-capacity-*planning)
+* [Quantitative cluster sizing](https://www.elastic.co/elasticon/conf/2016/sf/quantitative-cluster-sizing)
 
 ## Documentation
 * [Glossary](https://www.elastic.co/guide/en/elasticsearch/reference/current/glossary.html)
-* [Document Indices](https://www.elastic.co/guide/en/elasticsearch/reference/7.12/documents-*indices.html)
+* [Document Indices](https://www.elastic.co/guide/en/elasticsearch/reference/7.12/documents-indices.html)
 * [Mapping](https://www.elastic.co/guide/en/elasticsearch/reference/7.12/mapping.html)
 * [Elasticsearch concepts](https://logz.io/blog/10-elasticsearch-concepts/)
 * [Elastisearch 7.X - Breaking Changes](https://www.elastic.co/guide/en/elasticsearch/reference/current/breaking-changes-7.0.html#_index_creation_no_longer_defaults_to_five_shards)
