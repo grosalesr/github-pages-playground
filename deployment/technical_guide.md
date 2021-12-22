@@ -55,11 +55,11 @@ Elasticsearch is a distributed document store and search engine. Instead of stor
     * A mapping definition also includes metadata fields, like the \_source field, which customize how a document’s associated metadata is handled.
     * **Mapping Types:**
         * **Dynamic mapping**, Elasticsearch adds new fields automatically, just by indexing a document
-            * Fields can be added to the top*level mapping, and to inner object and nested fields.
+            * Fields can be added to the top-level mapping, and to inner object and nested fields.
 
         * **Explicit mapping** allows you to precisely choose how to define the mapping definition.
 
-* **Index** (Indices) are the largest unit of data in Elasticsearch, are logical partitions of documents and each document is a collection of fields, which are the key*value pairs that contain your data.
+* **Index** (Indices) are the largest unit of data in Elasticsearch, are logical partitions of documents and each document is a collection of fields, which are the key-value pairs that contain your data.
     * **In the work of relational databases, indices can be compared to a database.**
     * There can be as many indices as needed, each will hold documents that are unique to each index.
     * Indices are identified by lowercase names that refer to actions that are performed actions (such as searching and deleting) on the documents that are inside each index.
@@ -156,11 +156,11 @@ There are more node types, please refer to the official documentation, here we o
       * **All nodes functions as coordinating nodes**
 
 ### Node Resource Consumption
-![Elasticsearch sizing and capacity planning, 2019](imgs/tech_guide-*sizing_and_capacity_planning.png)
+![Elasticsearch sizing and capacity planning, 2019](imgs/tech_guide-sizing_and_capacity_planning.png)
 
 ## Clustering
 
-### Resilience in a three* node cluster
+### Resilience in a three node cluster
 The following recommendation are given by Elastic specifically for a three node Elasticsearch cluster:
 * All they are data nodes
     * **Default behavior**
@@ -191,7 +191,7 @@ The following recommendation are given by Elastic specifically for a three node 
 * [Nodes](https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-node.html)
 * [Delayed allocation](https://www.elastic.co/guide/en/elasticsearch/reference/current/delayed-allocation.html)
 
----***
+---
 
 1.  Apache Lucene is a Java open-source library that performs full-text search
 2.  See ‘More about Sharding & Replicas’ for details
