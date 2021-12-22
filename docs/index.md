@@ -4,7 +4,7 @@ Elastic rapid course can be found [here](technical_guide.md)
 
 Elastic deployment guide can be found here
 
-|Hostname|CPU|RAM|App Deployed|Role|
+|Hostname|CPU|RAM|App Deployed|Elasticsearch Node Role|
 | --- | --- | --- | --- | --- |
 | elastic1 | 4 | 32 GB | Elasticsearch | master node |
 | elastic4 | 4 | 32 GB | * Elasticsearch \n * Kibana | coordinating node |
