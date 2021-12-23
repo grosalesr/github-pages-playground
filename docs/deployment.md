@@ -92,7 +92,7 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
 1. Edit `/etc/fstab` and add the following:\
 `//teraelastic.ter.teradyne.com/elasticstack/elastic# /mnt/teraelastic/ cifs credentials=/root/.teraelastic,rw,uid=elasticsearch,gid=elasticsearch 0 0`
 
-    a.  Make sure to change elastic# for the appropriate number, 1 to 4, based on 'Configure Filer Storage' section and the server that is being configured.
+    a.  Make sure to change elastic# for the appropriate number, 1 to 4, based on [Configure Filer Storage](#configure-filer-storage) section and the server that is being configured.
 
 1. Create the credentials file\
     a. Create the credentials file
