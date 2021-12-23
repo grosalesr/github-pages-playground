@@ -2,7 +2,7 @@
 * [Considerations](#considerations)
 * [Configure Filer Storage](#configure-filer-storage)
 * [Elasticsearch](#elasticsearch)
-    * [Repository & Installation](#repository-installation)
+    * [Repository & Installation](#repository-&-installation)
     * [Mount Filer Storage](#mount-filer-storage)
     * [Elasticsearch Configuration](#configuration)
     * [Elasticsearch Keystore](#keystore)
@@ -98,7 +98,7 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
     a. Create the credentials file
     `vim /root/.teraelastic`
 
-    b. Add the following content\
+    b. Add the following content
     ```txt
     username=srv-elastic
     password=<service_account_password>
