@@ -94,14 +94,14 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
 
     a.  Make sure to change elastic# for the appropriate number, 1 to 4, based on 'Configure Filer Storage' section and the server that is being configured.
 
-1. Create the credentials file as below
+1. Create the credentials file as below\
     a. Create the credentials file\
        `vim /root/.teraelastic`
     b.  add the following content
-```txt
-username=srv-elastic
-password=\<service_account_password\>
-```
+        ```txt
+        username=srv-elastic
+        password=\<service_account_password\>
+        ```
     1.  Save and close the file
     1.  Change the file permission to only allow read & write to root
 `chmod 600 /root/.teraelastic`
