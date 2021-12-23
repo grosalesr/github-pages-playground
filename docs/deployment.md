@@ -65,9 +65,11 @@ Configure permission for each directory created as follows:
 ## Repository & Installation
 
 1. Import the repository key
+
 `rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch`
 
 1.  Create the repository file, `/etc/yum.repos.d/elasticsearch.repo`, with the following content:
+
 ```txt
 [elasticsearch]
 name=Elasticsearch repository for 7.x packages
@@ -80,6 +82,7 @@ type=rpm-md
 ```
 
 1. Install Elasticsearch
+
 `yum install -y \--enablerepo=elasticsearch elasticsearch`
 
 ## Mount Filer Storage
@@ -104,6 +107,3 @@ password=\<service_account_password\>
     1.  Change the file permission to only allow read & write to root
 `chmod 600 /root/.teraelastic`
 
-1.  Mount the filer storage
-`mount -a`
-    1.  If above command throws an error, check previous steps for errors.
