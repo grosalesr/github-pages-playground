@@ -34,7 +34,7 @@
 * [Configuring Group Roles and Mapping](#configuring-group-roles-and-mapping)
 
 # Considerations
-* java is not required to be installed, since Elasticsearch bundles its own java binary
+* java is not required to be installed, since Elastic apps bundles its own java binary
 * The installation method uses Elastic repositories which assumes Internet access
 * X-pack is configured alongside with Elasticsearch, Kibana & Logstash
 * Password are stored in each application keystore
@@ -65,8 +65,7 @@ Configure permission for each directory created as follows:
 ## Repository & Installation
 
 1. Import the repository key
-
-`rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch`
+  `rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch`
 
 1.  Create the repository file, `/etc/yum.repos.d/elasticsearch.repo`, with the following content:
 
@@ -107,3 +106,4 @@ password=\<service_account_password\>
     1.  Change the file permission to only allow read & write to root
 `chmod 600 /root/.teraelastic`
 
+1.  Mount the filer storage
