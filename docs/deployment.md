@@ -6,6 +6,8 @@
     * [Mount filer storage](#mount-filer-storage)
     * [Configuration file](#configuration-file)
     * [Keystore](#keystore)
+        * [System user passwords](#system-user-passwords)
+        * [Secure cluster's nodes communication](#secure-cluster's-nodes-communication)
     * [Service Configuration](#service-configuration)
     * [Verification](#verification)
     * [License activation](#license-activation)
@@ -229,5 +231,3 @@ Once the service is running in all nodes, check the cluster status:
 `curl http://nodeIP:9200/\_cluster/health?pretty -u elastic`
 
 ![][8]
-
-## License Activation
