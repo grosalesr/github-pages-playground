@@ -100,8 +100,8 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
 
     b.  add the following content
         ```txt
-        username=srv-elastic
-        password=<service_account_password>
+            username=srv-elastic
+            password=<service_account_password>
         ```
     1.  Save and close the file
     1.  Change the file permission to only allow read & write to root
