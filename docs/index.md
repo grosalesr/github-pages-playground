@@ -1,8 +1,8 @@
 # Landing page
 
-Elastic rapid course can be found [here](technical_guide.md)
+[Elastisearch 101](technical_guide.md)
 
-Elastic deployment guide can be found here
+[Elastic deployment guide](deployment.md)
 
 |Hostname|CPU|RAM|App Deployed|Elasticsearch Node Role|
 | --- | --- | --- | --- | --- |
