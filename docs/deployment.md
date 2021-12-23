@@ -7,7 +7,7 @@
     * [Configuration file](#configuration-file)
     * [Keystore](#keystore)
         * [System user passwords](#system-user-passwords)
-        * [Secure cluster's nodes communication](#secure-cluster's-nodes-communication)
+        * [Secure nodes communication](#secure-nodes-communication)
     * [Service Configuration](#service-configuration)
     * [Verification](#verification)
     * [License activation](#license-activation)
@@ -133,7 +133,7 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
 
 `/usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive`
 
-### Secure cluster's nodes communication
+### Secure nodes communication
 
 Self-signed certificates are used, this means:
 * The creation of a single certificate that will be used for
