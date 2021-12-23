@@ -1,14 +1,14 @@
 # Table of Contents
 * [Considerations](#considerations)
-* [Configure Filer Storage](#configure-filer-storage)
+* [Filer storage setup](#filer-storage-setup)
 * [Elasticsearch](#elasticsearch)
     * [Repository and installation](#repository-and-installation)
-    * [Mount Filer Storage](#mount-filer-storage)
-    * [Elasticsearch Configuration](#configuration)
-    * [Elasticsearch Keystore](#keystore)
-    * [Service configuration](#service-configuration)
+    * [Mount filer storage](#mount-filer-storage)
+    * [Configuration](#configuration)
+    * [Elasticsearch keystore](#keystore)
+    * [Service Configuration](#service-configuration)
     * [Verification](#verification)
-    * [License Activation](#license-activation)
+    * [License activation](#license-activation)
     * [CLI](#cli)
     * [Securing Cluster's nodes communication](#secure-clusters-nodes-communication)
     * [Stack Monitoring ](Metricbeat)(#stack-monitoring-metricbeat)
@@ -40,7 +40,7 @@
 * Password are stored in each application keystore
 * Configuration files are in stored in [GitHub repository]
 
-# Configure Filer Storage
+# Filer storage setup
 
 One directory per server was created in the filer, `\\teraelastic.ter.teradyne.com\elasticstack\` , as you can see in the picture below.
 
@@ -82,7 +82,7 @@ type=rpm-md
 1. Install Elasticsearch\
 `yum install -y --enablerepo=elasticsearch elasticsearch`
 
-## Mount Filer Storage
+## Mount filer storage
 
 Before Elasticsearch configuration, make sure filer storage is available as persistent storage in the system:
 
@@ -92,7 +92,7 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
 1. Edit `/etc/fstab` and add the following:\
 `//teraelastic.ter.teradyne.com/elasticstack/elastic# /mnt/teraelastic/ cifs credentials=/root/.teraelastic,rw,uid=elasticsearch,gid=elasticsearch 0 0`
 
-    a.  Make sure to change elastic# for the appropriate number, 1 to 4, based on [Configure Filer Storage](#configure-filer-storage) section and the server that is being configured.
+    a. Make sure to use the appropriate number, 1 to 4, for **elastic#** based on [Configure Filer Storage](#configure-filer-storage) section and the server that is being configured.
 
 1. Create the credentials file\
     a. Create the credentials file
@@ -112,4 +112,14 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
 `mount -a`
     a.  If above command throws an error, check previous steps for errors.
 
-### Secure cluster's nodes communication
+## Configuration
+
+1.  Go to `/etc/elasticsearch/`
+1.  Get the configuration file from the [repository]()
+    a.  From the main page in the repository go to `elasticsearch/config/`
+    b.  There will be a directory per each node in the cluster
+    c.  Copy the configuration file appropriate for the node that is being configured
+
+### Keystore
+
+#### System user passwords
