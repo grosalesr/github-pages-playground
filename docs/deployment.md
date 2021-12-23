@@ -110,16 +110,36 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
 
 1.  Mount the filer storage\
 `mount -a`
-    a.  If above command throws an error, check previous steps for errors.
+
+    a.  If above command throws an error, check previous steps for a typo.
 
 ## Configuration
 
-1.  Go to `/etc/elasticsearch/`
 1.  Get the configuration file from the [repository]()
     a.  From the main page in the repository go to `elasticsearch/config/`
+
     b.  There will be a directory per each node in the cluster
-    c.  Copy the configuration file appropriate for the node that is being configured
 
-### Keystore
+1.  Copy the appropriate configuration file for the node that is being configured in `/etc/elasticsearch/`
 
-#### System user passwords
+## Keystore
+### System user passwords
+
+-  The following command is intended for use only during the initial configuration of the Elasticsearch security features
+-  Interactive mode is used, and the password is `changeme` **for all system users**
+
+`/usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive`
+
+
+
+### Secure cluster's nodes communication
+
+Self-signed certificates are used, this means:
+
+-   The creation of a single certificate that will be used for
+-   Certificate level verification for each of the nodes
+-   Password used is Teradyne01
+
+1.  Go to /etc/elasticsearch
+
+cd /etc/elasticsearch
