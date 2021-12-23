@@ -80,7 +80,7 @@ type=rpm-md
 ```
 
 1. Install Elasticsearch\
-`yum install -y \--enablerepo=elasticsearch elasticsearch`
+`yum install -y --enablerepo=elasticsearch elasticsearch`
 
 ## Mount Filer Storage
 
@@ -91,12 +91,13 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
 
 1. Edit `/etc/fstab` and add the following:\
 `//teraelastic.ter.teradyne.com/elasticstack/elastic# /mnt/teraelastic/ cifs credentials=/root/.teraelastic,rw,uid=elasticsearch,gid=elasticsearch 0 0`
+
     a.  Make sure to change elastic# for the appropriate number, 1 to 4, based on 'Configure Filer Storage' section and the server that is being configured.
 
 1. Create the credentials file as below
-    1. Create the credentials file\
+    a. Create the credentials file\
        `vim /root/.teraelastic`
-    1.  add the following content
+    b.  add the following content
 ```txt
 username=srv-elastic
 password=\<service_account_password\>
@@ -106,4 +107,3 @@ password=\<service_account_password\>
 `chmod 600 /root/.teraelastic`
 
 1.  Mount the filer storage
-`mount -a`
