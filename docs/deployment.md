@@ -136,7 +136,7 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
 Self-signed certificates are used, this means:
 * The creation of a single certificate that will be used for
 * Certificate level verification for each of the nodes
-* Password used is Teradyne01
+* Password used is `changeme`
 
 1. Go to /etc/elasticsearch\
 `cd /etc/elasticsearch`
