@@ -64,8 +64,8 @@ Configure permission for each directory created as follows:
 # Elasticsearch
 ## Repository & Installation
 
-1. Import the repository key
-    `rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch`
+1. Import the repository key\
+`rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch`
 
 1.  Create the repository file, `/etc/yum.repos.d/elasticsearch.repo`, with the following content:
 
