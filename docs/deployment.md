@@ -186,7 +186,7 @@ The password must be submitted twice, and you won't see the password typed.
 
 The option, `bootstrap.memory_lock: true`, is required when a system will be on production.
 
-> The default Elasticsearch systemd unit file is missing the limits configuration to grant the resource access required, therefore an override[^1] configuration must be created for Elasticsearch to access the resources needed.
+The default Elasticsearch systemd unit file is missing the limits configuration to grant the resource access required, therefore an override[^1] configuration must be created for Elasticsearch to access the resources needed.
 
 1.  Edit Elasticsearch's systemd unit file\
 `systemctl edit elasticsearch.service`
