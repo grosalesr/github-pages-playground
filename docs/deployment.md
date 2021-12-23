@@ -44,15 +44,15 @@
 
 One directory per server was created in the filer, `\\teraelastic.ter.teradyne.com\elasticstack\` , as you can see in the picture below.
 
-![filer path][imgs/deployment_guide-filer_configuration00.png]
+![filer path](imgs/deployment_guide-filer_configuration00.png)
 
 The directory structure for elasticsearch servers is
 
-![elasticsearch directory structure][imgs/deployment_guide-filer_configuration01.png]
+![elasticsearch directory structure](imgs/deployment_guide-filer_configuration01.png)
 
 And for elastic5 (Logstash & Filebeats)
 
-![logstash and filebeat directory][imgs/deployment_guide-filer_configuration02.png]
+![logstash and filebeat directory](imgs/deployment_guide-filer_configuration02.png)
 
 Configure permission for each directory created as follows:
 * Right click to each folder
@@ -98,12 +98,12 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
     a. Create the credentials file
     `vim /root/.teraelastic`
 
-    b.  add the following content
+    b. Add the following content
     ```txt
     username=srv-elastic
     password=<service_account_password>
     ```
-    c.  Save and close the file
+    c. Save and close the file
 
-    d.  Change the file permission to only allow read & write to root\
+    d. Change the file permission to only allow *read & write* to root\
     `chmod 600 /root/.teraelastic`
