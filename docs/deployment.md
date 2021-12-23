@@ -98,7 +98,7 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
     a. Create the credentials file
     `vim /root/.teraelastic`
 
-    b. Add the following content
+    b. Add the following content\
     ```txt
     username=srv-elastic
     password=<service_account_password>
@@ -107,3 +107,9 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
 
     d. Change the file permission to only allow *read & write* to root\
     `chmod 600 /root/.teraelastic`
+
+1.  Mount the filer storage\
+`mount -a`
+    a.  If above command throws an error, check previous steps for errors.
+
+### Secure cluster's nodes communication
