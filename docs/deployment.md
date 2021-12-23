@@ -8,6 +8,7 @@
     * [Keystore](#keystore)
         * [System user passwords](#system-user-passwords)
         * [Secure nodes communication](#secure-nodes-communication)
+        * [LDAP](#ldap)
     * [Service Configuration](#service-configuration)
     * [Verification](#verification)
     * [License activation](#license-activation)
@@ -126,6 +127,9 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
 1.  Copy the appropriate configuration file for the node that is being configured in `/etc/elasticsearch/`
 
 ## Keystore
+
+In order to not have password in plain text, the keystore is being used to store the passwords.
+
 ### System user passwords
 
 * The following command is intended for use only during the initial configuration of the Elasticsearch security features
@@ -138,7 +142,7 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
 Self-signed certificates are used, this means:
 * The creation of a single certificate that will be used for
 * Certificate level verification for each of the nodes
-* Password used is `changeme`
+* Password is `changeme`
 
 1. Go to /etc/elasticsearch\
 `cd /etc/elasticsearch`
@@ -170,20 +174,9 @@ below is wrong, \--name references the certificate internal name and \--out is t
 
     a.  Step #3 is not needed since it will create another certificate
 
-### Cluster's node communication
-
-Use the following commands to add to the keystore the password used in the previous section, Secure cluster's nodes communication: password = `changeme`
-
-`/usr/share/elasticsearch/bin/elasticsearch-keystore add xpack.security.transport.ssl.keystore.secure_password`
-`/usr/share/elasticsearch/bin/elasticsearch-keystore add xpack.security.transport.ssl.truststore.secure_password`
-`/usr/share/elasticsearch/bin/elasticsearch-keystore add xpack.security.http.ssl.keystore.secure_password`
-`/usr/share/elasticsearch/bin/elasticsearch-keystore add xpack.security.http.ssl.truststore.secure_password`
-
 ### LDAP
 
-For LDAP to work and not having the password in plain text, the Keystore is being used to store the password.
-
-Use the following command to save the password:
+Use the following command to store the password in the keystore:
 
 `/usr/share/elasticsearch/bin/elasticsearch-keystore add xpack.security.authc.realms.ldap.ldap.secure_bind_password`
 
@@ -191,9 +184,9 @@ The password must be submitted twice, and you won't see the password typed.
 
 ## Service configuration
 
-The option, bootstrap.memory_lock: true, is required when a system will be on production.
+The option, `bootstrap.memory_lock: true`, is required when a system will be on production.
 
-The default Elasticsearch systemd unit file is missing the limits configuration to grant the resource access required, therefore an override[^1] configuration must be created for Elasticsearch to access the resources needed.
+> The default Elasticsearch systemd unit file is missing the limits configuration to grant the resource access required, therefore an override[^1] configuration must be created for Elasticsearch to access the resources needed.
 
 1.  Edit Elasticsearch's systemd unit file\
 `systemctl edit elasticsearch.service`
@@ -231,3 +224,10 @@ Once the service is running in all nodes, check the cluster status:
 `curl http://nodeIP:9200/\_cluster/health?pretty -u elastic`
 
 ![][8]
+
+## License Activation
+
+Requirements:
+
+* Download License file
+* License file must be in the node that you want to use for the license activation
