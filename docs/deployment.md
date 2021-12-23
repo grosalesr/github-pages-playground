@@ -2,7 +2,7 @@
 * [Considerations](#considerations)
 * [Configure Filer Storage](#configure-filer-storage)
 * [Elasticsearch](#elasticsearch)
-    * [Repository & Installation](#repository-&-installation)
+    * [Repository and installation](#repository-and-installation)
     * [Mount Filer Storage](#mount-filer-storage)
     * [Elasticsearch Configuration](#configuration)
     * [Elasticsearch Keystore](#keystore)
@@ -62,7 +62,7 @@ Configure permission for each directory created as follows:
     * Add `srv-elastic`
 
 # Elasticsearch
-## Repository & Installation
+## Repository and installation
 
 1. Import the repository key\
 `rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch`
