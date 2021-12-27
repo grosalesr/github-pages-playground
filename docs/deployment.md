@@ -14,7 +14,7 @@
     * [License activation](#license-activation)
         * [CLI](#cli)
     * [Securing Cluster's nodes communication](#secure-clusters-nodes-communication)
-    * [Stack Monitoring ](Metricbeat)(#stack-monitoring-metricbeat)
+    * [Stack Monitoring with Metricbeat](#stack-monitoring-with-metricbeat)
 * [Metricbeat Configuration](#configuration)
 * [Kibana](#_Toc81027677)
     * [Repository & Installation](#repository-installation)
@@ -254,7 +254,7 @@ This step can be done in any Elasticsearch node; in this case, elastic4 node was
 
 1.  License is now activated
 
-## Stack Monitoring (Metricbeat)
+## Stack Monitoring with Metricbeat
 
 Legacy monitoring will be not supported from Elasticsearch 8 release, therefore in an effort to prepare for the future the cluster is being monitored by Metricbeat.
 
@@ -309,7 +309,7 @@ type=rpm-md
 
 ### Verification
 
-curl -X GET node_IP:9200/metricbeat-\*/\_search?pretty
+`curl -X GET node_IP:9200/metricbeat-*/_search?pretty`
 
-![](9)
+![metricbeat verification](imgs/deployment_guide-metricbeat_verification00.png)
 
