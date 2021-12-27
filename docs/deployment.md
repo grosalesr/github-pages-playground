@@ -216,9 +216,11 @@ If not, check [Elasticsearch configuration]() & [Service configuration]() for ty
 Once the service is running in all nodes, check the cluster status:
 
 `curl http://nodeIP:9200/\_cat/nodes?v -u elastic`
+
 ![elasticsearch verification][imgs/deployment_guide-elasticsearch_verification00.png]
 
 `curl http://nodeIP:9200/\_cluster/health?pretty -u elastic`
+
 ![elasticsearch verification][imgs/deployment_guide-elasticsearch_verification01.png]
 
 ## License Activation
@@ -229,5 +231,3 @@ Requirements:
 * License file must be in the node that you want to use for the license activation
 
 ### CLI
-
-This step can be done in any Elasticsearch node; in this case, elastic4 node was used: and the command must be submitted twice:
