@@ -231,3 +231,85 @@ Requirements:
 * License file must be in the node that you want to use for the license activation
 
 ### CLI
+
+This step can be done in any Elasticsearch node; in this case, elastic4 node was used: and the command must be submitted twice:
+
+1.  First license command:\
+`curl -XPUT -u elastic 'http://131.101.117.208:9200/_license' -H "Content-Type: application/json" -d \@teradyne-non_production-718f278f-e7a4-4887-b1be-efcea8b23a32-v5.json`
+
+    a.  Enter host password for user `elastic`
+
+    b.  And the response will look like the following:
+    ```json
+    {"acknowledged":false,"license_status":"valid","acknowledge":{"message":"This license update requires acknowledgement. To acknowledge the license, please read the following messages and update the license again, this time with the "acknowledge=true" parameter:","security":["Field and document level access control will be disabled.","Custom realms will be ignored.","A custom authorization engine will be ignored."]}}
+    ```
+
+1.  Now, modify the command to add the acknowledgement required:\
+`curl -XPUT -u elastic 'http://131.101.117.208:9200/_license?acknowledge=true' -H "Content-Type: application/json" -d @teradyne-non_production-718f278f-e7a4-4887-b1be-efcea8b23a32-v5.json`
+
+    a.  Enter host password for user `elastic`
+
+    b.  And the response will look like the following:
+    `{"acknowledged":true,"license_status":"valid"}`
+
+1.  License is now activated
+
+## Stack Monitoring (Metricbeat)
+
+Legacy monitoring will be not supported from Elasticsearch 8 release, therefore in an effort to prepare for the future the cluster is being monitored by Metricbeat.
+
+A single Metricbeat instance configured with scope: cluster and configure hosts to point to an endpoint which directs requests to the master-ineligible nodes in the cluster.
+
+### Repository & Installation
+
+1.  Import repository key (if not already imported)\
+`rpm --import <https://packages.elastic.co/GPG-KEY-elasticsearch>`
+
+1.  Create the repository file, /etc/yum.repos.d/elastic-packages.repo, with the following content:
+```txt
+[elastic-7.x]
+name=Elastic repository for 7.x packages
+baseurl=https://artifacts.elastic.co/packages/7.x/yum
+gpgcheck=1
+gpgkey=https://artifacts.elastic.co/GPG-KEY-elasticsearch
+enabled=1
+autorefresh=1
+type=rpm-md
+```
+
+1.  Install Metricbeat\
+`yum install -y metricbeat`
+
+### Configuration
+
+1.  Go to `/etc/metricbeat/`
+
+1.  Get the configuration file from GitHub, see consideration at the beginning of this document.
+
+    a.  Copy the files as per location in repository
+
+1.  Enable Elasticsearch module\
+`metricbeat modules enable elasticsearch-xpack`
+
+4.  Enable Kibana module\
+`metricbeat modules enable kibana-xpack`
+
+### Keystore
+
+1.  Create the keystore\
+`metricbeat keystore create`
+
+1.  Add elasticsearch system password to the keystore\
+`metricbeat keystore add ES_PWD`
+
+### Start Service
+
+1.  Enable & start Metricbeat service\
+`systemctl enable --now metricbeat.service`
+
+### Verification
+
+curl -X GET node_IP:9200/metricbeat-\*/\_search?pretty
+
+![](9)
+
