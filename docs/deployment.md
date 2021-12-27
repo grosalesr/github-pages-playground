@@ -153,8 +153,6 @@ Self-signed certificates are used, this means:
 1. Change certificate ownership\
 `chown root:elasticsearch certs/`
 
-below is wrong, \--name references the certificate internal name and \--out is the full path + filename
-
 1. Create the self-signed certificate\
 `/usr/share/elasticsearch/bin/elasticsearch-certutil cert --name teraelastic-certificates.p12 --out /etc/elasticsearch/certs/`
 
@@ -186,7 +184,7 @@ The password must be submitted twice, and you won't see the password typed.
 
 The option, `bootstrap.memory_lock: true`, is required when a system will be on production.
 
-The default Elasticsearch systemd unit file is missing the limits configuration to grant the resource access required, therefore an override[^1] configuration must be created for Elasticsearch to access the resources needed.
+> The default Elasticsearch systemd unit file is missing the limits configuration to grant the resource access required, therefore an override[^1] configuration must be created for Elasticsearch to access the resources needed.
 
 1.  Edit Elasticsearch's systemd unit file\
 `systemctl edit elasticsearch.service`
@@ -209,7 +207,7 @@ LimitNOFILE=65536
 
 If successful, you will see something like this
 
-![systemctl status elasticsearch ](imgs/)
+![systemctl status elasticsearch ](imgs/deployment_guide-elasticsearch_systemctl_status.png)
 
 If not, check [Elasticsearch configuration]() & [Service configuration]() for typos.
 
@@ -218,12 +216,10 @@ If not, check [Elasticsearch configuration]() & [Service configuration]() for ty
 Once the service is running in all nodes, check the cluster status:
 
 `curl http://nodeIP:9200/\_cat/nodes?v -u elastic`
-
-![][7]
+![elasticsearch verification][imgs/deployment_guide-elasticsearch_verification00.png]
 
 `curl http://nodeIP:9200/\_cluster/health?pretty -u elastic`
-
-![][8]
+![elasticsearch verification][imgs/deployment_guide-elasticsearch_verification01.png]
 
 ## License Activation
 
@@ -231,3 +227,7 @@ Requirements:
 
 * Download License file
 * License file must be in the node that you want to use for the license activation
+
+### CLI
+
+This step can be done in any Elasticsearch node; in this case, elastic4 node was used: and the command must be submitted twice:
