@@ -215,13 +215,13 @@ If not, check [Elasticsearch configuration]() & [Service configuration]() for ty
 
 Once the service is running in all nodes, check the cluster status:
 
-`curl http://nodeIP:9200/\_cat/nodes?v -u elastic`
+`curl http://nodeIP:9200/_cat/nodes?v -u elastic`
 
-![elasticsearch verification][imgs/deployment_guide-elasticsearch_verification00.png]
+![elasticsearch verification](imgs/deployment_guide-elasticsearch_verification00.png)
 
-`curl http://nodeIP:9200/\_cluster/health?pretty -u elastic`
+`curl http://nodeIP:9200/_cluster/health?pretty -u elastic`
 
-![elasticsearch verification][imgs/deployment_guide-elasticsearch_verification01.png]
+![elasticsearch verification](imgs/deployment_guide-elasticsearch_verification01.png)
 
 ## License Activation
 
