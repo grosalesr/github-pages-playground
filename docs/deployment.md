@@ -16,6 +16,11 @@
     * [Securing Cluster's nodes communication](#secure-clusters-nodes-communication)
     * [Stack Monitoring with Metricbeat](#stack-monitoring-with-metricbeat)
 * [Metricbeat Configuration](#configuration)
+    * [Repository and installation](#repository-and-installation)
+    * [Configuration](#configuration)
+    * [Keystore](#keystore)
+    * [Start Service](#start-service)
+    * [Verification](#verification)
 * [Kibana](#_Toc81027677)
     * [Repository & Installation](#repository-installation)
     * [Kibana Configuration](#configuration)
@@ -256,11 +261,13 @@ This step can be done in any Elasticsearch node; in this case, elastic4 node was
 
 ## Stack Monitoring with Metricbeat
 
+[source](https://www.elastic.co/guide/en/elasticsearch/reference/current/configuring-metricbeat.html)
+
 > Legacy monitoring will be not supported from Elasticsearch 8 release, therefore in an effort to prepare for the future the cluster is being monitored by Metricbeat.
 
-A single Metricbeat instance configured with scope: cluster and configure hosts to point to an endpoint which directs requests to the master-ineligible nodes in the cluster.
+A single Metricbeat instance, elastic4, configured with `scope: cluster` configured to point to an endpoint which directs requests to the master-eligible nodes in the cluster.
 
-### Repository & Installation
+### Repository and installation
 
 1.  Import repository key (if not already imported)\
 `rpm --import <https://packages.elastic.co/GPG-KEY-elasticsearch>`
@@ -306,10 +313,3 @@ type=rpm-md
 
 1.  Enable & start Metricbeat service\
 `systemctl enable --now metricbeat.service`
-
-### Verification
-
-`curl -X GET node_IP:9200/metricbeat-*/_search?pretty`
-
-![metricbeat verification](imgs/deployment_guide-metricbeat_verification00.png)
-
