@@ -14,8 +14,7 @@
     * [License activation](#license-activation)
         * [CLI](#cli)
     * [Securing Cluster's nodes communication](#secure-clusters-nodes-communication)
-    * [Stack Monitoring with Metricbeat](#stack-monitoring-with-metricbeat)
-* [Metricbeat Configuration](#configuration)
+* [Metricbeat](#metricbeat)
     * [Repository and installation](#repository-and-installation)
     * [Configuration](#configuration)
     * [Keystore](#keystore)
@@ -259,7 +258,7 @@ This step can be done in any Elasticsearch node; in this case, elastic4 node was
 
 1.  License is now activated
 
-## Stack Monitoring with Metricbeat
+## Metricbeat
 
 [source](https://www.elastic.co/guide/en/elasticsearch/reference/current/configuring-metricbeat.html)
 
@@ -313,3 +312,4 @@ type=rpm-md
 
 1.  Enable & start Metricbeat service\
 `systemctl enable --now metricbeat.service`
+
