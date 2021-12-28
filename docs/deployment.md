@@ -256,7 +256,7 @@ This step can be done in any Elasticsearch node; in this case, elastic4 node was
 
 ## Stack Monitoring with Metricbeat
 
-Legacy monitoring will be not supported from Elasticsearch 8 release, therefore in an effort to prepare for the future the cluster is being monitored by Metricbeat.
+> Legacy monitoring will be not supported from Elasticsearch 8 release, therefore in an effort to prepare for the future the cluster is being monitored by Metricbeat.
 
 A single Metricbeat instance configured with scope: cluster and configure hosts to point to an endpoint which directs requests to the master-ineligible nodes in the cluster.
 
@@ -284,7 +284,7 @@ type=rpm-md
 
 1.  Go to `/etc/metricbeat/`
 
-1.  Get the configuration file from GitHub, see consideration at the beginning of this document.
+1. Get the configuration file from the [repository]()
 
     a.  Copy the files as per location in repository
 
