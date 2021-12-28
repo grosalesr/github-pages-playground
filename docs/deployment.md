@@ -4,7 +4,7 @@
 * [Elasticsearch](#elasticsearch)
     * [Repository and installation](#repository-and-installation)
     * [Mount filer storage](#mount-filer-storage)
-    * [Configuration file](#configuration-file)
+    * [Configuration](#configuration)
     * [Keystore](#keystore)
         * [System user passwords](#system-user-passwords)
         * [Secure nodes communication](#secure-nodes-communication)
@@ -17,7 +17,7 @@
 * [Metricbeat](#metricbeat)
     * [Repository and installation](#repository-and-installation)
     * [Configuration](#configuration)
-    * [Keystore](#keystore)
+    * [Keystore](#metricbeat-keystore)
     * [Start Service](#start-service)
     * [Verification](#verification)
 * [Kibana](#_Toc81027677)
@@ -120,7 +120,7 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
 
     a.  If above command throws an error, check previous steps for a typo.
 
-## Configuration file
+## Configuration
 
 1.  Get the configuration file from the [repository]()
 
