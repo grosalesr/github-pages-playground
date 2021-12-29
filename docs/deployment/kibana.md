@@ -26,7 +26,7 @@ autorefresh=1
 type=rpm-md
 ```
 
-1. Install kibana
+1. Install kibana\
 `yum -y --enablerepo=kibana install kibana`
 
 # Configuration
