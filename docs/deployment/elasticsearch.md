@@ -10,7 +10,6 @@
 * [Verification](#verification)
 * [License activation](#license-activation)
     * [CLI](#cli)
-* [Secure cluster's nodes communication](#secure-clusters-nodes-communication)
 
 ---
 
@@ -117,9 +116,9 @@ Self-signed certificates are used, this means:
 1. Change certificate permissions
 `chmod -R 640 certs/`
 
-1. Copy the created certificate to the other nodes, make sure to follow all steps except step #3.
+1. Copy the created certificate to the other nodes, make sure to follow all steps except step #4.
 
-    a.  Step #3 is not needed since it will create another certificate
+    a.  Step #4 is not needed since it will create another certificate
 
 ## LDAP
 
