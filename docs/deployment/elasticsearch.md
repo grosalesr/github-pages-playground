@@ -6,7 +6,7 @@
     * [System user passwords](#system-user-passwords)
     * [Secure nodes communication](#secure-nodes-communication)
     * [LDAP](#ldap)
-* [Service Configuration](#service-configuration)
+* [System service](#system-service)
 * [Verification](#verification)
 * [License activation](#license-activation)
     * [CLI](#cli)
@@ -128,7 +128,7 @@ Use the following command to store the password in the keystore:
 
 The password must be submitted twice, and you won't see the password typed.
 
-## Service configuration
+## System Service
 
 The option, `bootstrap.memory_lock: true`, is required when a system will be on production.
 
