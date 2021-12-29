@@ -201,3 +201,6 @@ This step can be done in any Elasticsearch node; in this case, elastic4 node was
     `{"acknowledged":true,"license_status":"valid"}`
 
 1.  License is now activated
+
+
+[^1]: The override guarantees that when Elasticsearch gets updated, this configuration won't be lost.
