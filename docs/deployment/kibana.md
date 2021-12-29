@@ -27,7 +27,7 @@ type=rpm-md
 ```
 
 1. Install kibana\
-`yum -y --enablerepo=kibana install kibana`
+`yum install -y --enablerepo=kibana kibana`
 
 # Configuration
 
