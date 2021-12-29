@@ -87,7 +87,9 @@ AmbientCapabilities=CAP_NET_BIND_SERVICE
 1. Check service status\
 `systemctl status kibana`
 
-1.  Verify by going to the kibana site in a web browser
+# Verification
+
+Go to the kibana site in a web browser
 
 ---
 footnotes
