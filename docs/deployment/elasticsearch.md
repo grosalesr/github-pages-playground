@@ -202,5 +202,7 @@ This step can be done in any Elasticsearch node; in this case, elastic4 node was
 
 1.  License is now activated
 
+---
+footnotes
 
 [^1]: The override guarantees that when Elasticsearch gets updated, this configuration won't be lost.
