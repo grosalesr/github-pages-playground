@@ -35,6 +35,8 @@ Configure permission for each directory created as follows:
 
 Stack Applications:
 * [Elasticsearch](deployment/elasticsearch.md)
+* [Kibana](deployment/kibana.md)
+* [Logstash](deployment/logstash.md)
 * [Metricbeat](deployment/metricbeat.md)
 
 ---
