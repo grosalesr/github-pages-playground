@@ -12,8 +12,9 @@
     * [CLI](#cli)
 * [Secure cluster's nodes communication](#secure-clusters-nodes-communication)
 
-# Elasticsearch
-## Repository and installation
+---
+
+# Repository and installation
 
 1. Import the repository key\
 `rpm --import https://artifacts.elastic.co/GPG-KEY-elasticsearch`
@@ -33,7 +34,7 @@ type=rpm-md
 1. Install Elasticsearch\
 `yum install -y --enablerepo=elasticsearch elasticsearch`
 
-## Mount filer storage
+# Mount filer storage
 
 Before Elasticsearch configuration, make sure filer storage is available as persistent storage in the system:
 
@@ -64,7 +65,7 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
 
     a.  If above command throws an error, check previous steps for a typo.
 
-## Configuration
+# Configuration
 
 1.  Get the configuration file from the [repository]()
 
@@ -74,18 +75,18 @@ Before Elasticsearch configuration, make sure filer storage is available as pers
 
 1.  Copy the appropriate configuration file for the node that is being configured in `/etc/elasticsearch/`
 
-## Keystore
+# Keystore
 
 In order to not have password in plain text, the keystore is being used to store the passwords.
 
-### System user passwords
+## System user passwords
 
 * The following command is intended for use only during the initial configuration of the Elasticsearch security features
 * Interactive mode is used, and the password is `changeme` **for all system users**
 
 `/usr/share/elasticsearch/bin/elasticsearch-setup-passwords interactive`
 
-### Secure nodes communication
+## Secure nodes communication
 
 Self-signed certificates are used, this means:
 * The creation of a single certificate that will be used for
@@ -120,7 +121,7 @@ Self-signed certificates are used, this means:
 
     a.  Step #3 is not needed since it will create another certificate
 
-### LDAP
+## LDAP
 
 Use the following command to store the password in the keystore:
 
@@ -128,7 +129,7 @@ Use the following command to store the password in the keystore:
 
 The password must be submitted twice, and you won't see the password typed.
 
-## System Service
+# System Service
 
 The option, `bootstrap.memory_lock: true`, is required when a system will be on production.
 
@@ -150,7 +151,7 @@ LimitNOFILE=65536
 1.  Enable & start Elasticsearch service\
 `systemctl enable --now elasticsearch`
 
-5.  Check service status\
+1.  Check service status\
 `systemctl status elasticsearch`
 
 If successful, you will see something like this
@@ -159,7 +160,7 @@ If successful, you will see something like this
 
 If not, check [Elasticsearch configuration]() & [Service configuration]() for typos.
 
-## Verification
+# Verification
 
 Once the service is running in all nodes, check the cluster status:
 
@@ -171,14 +172,14 @@ Once the service is running in all nodes, check the cluster status:
 
 ![elasticsearch verification](../imgs/deployment_guide-elasticsearch_verification01.png)
 
-## License Activation
+# License Activation
 
 Requirements:
 
 * Download License file
 * License file must be in the node that you want to use for the license activation
 
-### CLI
+## CLI
 
 This step can be done in any Elasticsearch node; in this case, elastic4 node was used: and the command must be submitted twice:
 
