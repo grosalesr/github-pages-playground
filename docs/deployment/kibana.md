@@ -33,9 +33,9 @@ type=rpm-md
 
 1.  Get the configuration file from the [repository]()
 
-    a.  From the main page in the repository go to `elasticsearch/config/`
+    a.  From the main page in the repository go to `kibana/config/`
 
-    b.  There will be a directory per each node in the cluster
+    b.  There will be a directory per each host that runs Kibana
 
 1.  Copy the appropriate configuration in `/etc/kibana`
 
