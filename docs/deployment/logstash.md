@@ -73,7 +73,7 @@ type=rpm-md
 
 1. If both files are fine, proceede with the next section
 
-# Start Service
+# System service
 
 1. Enable & start Logstash service
 `systemctl enable --now logstash`
