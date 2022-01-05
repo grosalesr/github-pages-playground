@@ -7,18 +7,16 @@
 
 ---
 
-[source](https://www.elastic.co/guide/en/elasticsearch/reference/current/configuring-metricbeat.html)
+> Legacy monitoring will be not supported from Elasticsearch 8 release, therefore in an effort to prepare for the future the cluster is being monitored by Metricbeat [^1].
 
-> Legacy monitoring will be not supported from Elasticsearch 8 release, therefore in an effort to prepare for the future the cluster is being monitored by Metricbeat.
-
-A single Metricbeat instance, elastic4, configured with `scope: cluster` configured to point to an endpoint which directs requests to the master-eligible nodes in the cluster.
+A single Metricbeat instance configured with `scope: cluster` is configured to point to an endpoint which directs requests to the master-eligible nodes in the cluster.
 
 # Repository and installation
 
 1. Import repository key (if not already imported)\
-`rpm --import <https://packages.elastic.co/GPG-KEY-elasticsearch>`
+`rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch`
 
-1. Create the repository file, /etc/yum.repos.d/elastic-packages.repo, with the following content:
+1. Create the repository file, `/etc/yum.repos.d/elastic-packages.repo`, with the following content:
 ```txt
 [elastic-7.x]
 name=Elastic repository for 7.x packages
@@ -31,7 +29,7 @@ type=rpm-md
 ```
 
 1. Install Metricbeat\
-`yum install -y metricbeat`
+`yum install -y --enablerepo=elastic-packages metricbeat`
 
 # Configuration
 
@@ -68,3 +66,4 @@ type=rpm-md
 
 ![metricbeat verification](../imgs/deployment_guide-metricbeat_verification00.png)
 
+[^1]: [Monitoring in a production environment](https://www.elastic.co/guide/en/elasticsearch/reference/current/monitoring-production.html)
