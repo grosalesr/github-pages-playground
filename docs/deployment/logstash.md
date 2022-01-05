@@ -28,7 +28,7 @@ type=rpm-md
 
 # Mount filer storage
 
-1. Create the mountpoint teraelastic in `/mnt`
+1. Create the mountpoint teraelastic in `/mnt`\
 `mkdir /mnt/teraelastic/elastic5`
 
 1. Edit `/etc/fstab` and add the following:\
