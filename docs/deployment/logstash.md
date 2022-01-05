@@ -75,9 +75,9 @@ type=rpm-md
 
 # System service
 
-1. Enable & start Logstash service
+1. Enable & start Logstash service\
 `systemctl enable --now logstash`
 
-1. Check service status
+1. Check service status\
 `systemctl status logstash`
 
