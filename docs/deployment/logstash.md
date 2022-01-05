@@ -1,7 +1,7 @@
 # Logstash Deployment
 * [Repository and installation](#repository-and-installation)
 * [Mount filer storage](#mount-filer-storage)
-* [Logstash configuration](#logstash-configuration)
+* [Configuration](#configuration)
 * [System service](#system-service)
 
 ---
