@@ -66,4 +66,7 @@ type=rpm-md
 
 ![metricbeat verification](../imgs/deployment_guide-metricbeat_verification00.png)
 
+---
+footnotes
+
 [^1]: [Monitoring in a production environment](https://www.elastic.co/guide/en/elasticsearch/reference/current/monitoring-production.html)
